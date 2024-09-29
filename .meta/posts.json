@@ -7,8 +7,8 @@
     "langs": {
       "en": {
         "title": "Building a Blog Website with Remix",
-        "description": "Recently, I have been learning aboutRemixand had the idea of creating my own blog website, so I built this blog site using Remix technology. The blog is based on a model that separates the website from its content, deploying the site onVerceland using aGitHub repositoryas the database to store the blog content.",
-        "md5": "ef4d51eb318882c0857a017a8914f7a7"
+        "description": "Recently, I have been learning about Remix and had the idea of creating my own blog website, so I built this blog site using Remix technology. The blog is based on a model that separates the website from its content, deploying the site on Vercel and using a GitHub repository as the database to store the blog content.",
+        "md5": "46d767f3d6f1853fe481f19effae8117"
       },
       "zh": {
         "title": "基于Remix打造一个博客网站",
