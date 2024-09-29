@@ -1,0 +1,20 @@
+{
+  "create-blog": {
+    "image": "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "order": 2,
+    "publishDate": "2024-09-29T00:00:00.000Z",
+    "path": "posts/create-blog",
+    "langs": {
+      "en": {
+        "title": "Building a Blog Website with Remix",
+        "description": "Recently, I have been learning aboutRemixand had the idea of creating my own blog website, so I built this blog site using Remix technology. The blog is based on a model that separates the website from its content, deploying the site onVerceland using aGitHub repositoryas the database to store the blog content.",
+        "md5": "ef4d51eb318882c0857a017a8914f7a7"
+      },
+      "zh": {
+        "title": "基于Remix打造一个博客网站",
+        "description": "最近在学Remix，也有自己写一个博客网站的想法，于是我就利用Remix技术搭建了这个博客网站。博客基于网站和内容分离的模式，将网站部署在Vercel，并使用Github仓库作为数据库存储博客内容。",
+        "md5": "1361a88a804336b1152950a222b95105"
+      }
+    }
+  }
+}
