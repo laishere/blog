@@ -102,7 +102,7 @@ const processor = unified().use(remarkParse);
 
 function toPlainText(node) {
     if ('value' in node) {
-        return node.value.replace(/\s+/g, ' ').trim();
+        return node.value;
     }
     if ('children' in node) {
         return node.children.map(toPlainText).join('');
@@ -110,10 +110,11 @@ function toPlainText(node) {
     assert(false, 'Unknown node type: ' + node.type);
 }
 
-function extractDescription(content) {
+function extractDescription(content, lang) {
     const tree = processor.parse(content.slice(0, 500));
     const firstParagraph = tree.children.find(node => node.type === 'paragraph');
-    return firstParagraph ? toPlainText(firstParagraph) : '';
+    const text = firstParagraph ? toPlainText(firstParagraph) : '';
+    return text.replace(/\s+/g, lang === 'zh' ? '' : ' ').trim();
 }
 
 async function generatePostsMeta() {
@@ -138,7 +139,7 @@ async function generatePostsMeta() {
             assert(LANGUAGES.includes(lang), `${lang} is not a valid language`);
             const [langMeta, content] = readFrontMatter(join(dir, langFile));
             if (!langMeta.description) {
-                langMeta.description = extractDescription(content);
+                langMeta.description = extractDescription(content, lang);
             }
             verifyMeta(`${post}/${langFile}`, langMeta, POST_LANG_META_RULES);
             const postMeta = { ...indexMeta, ...langMeta };
