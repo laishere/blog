@@ -1,0 +1,47 @@
+name: Generate Meta
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 3
+
+    - name: Checkout or create meta
+      run: git fetch --depth=3 origin meta && git checkout meta || git checkout -b meta
+    
+    - name: Configure git
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+    - name: Merge main into meta
+      run: git merge --no-edit main
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      env:
+        PURGE_CACHE_URL: ${{ secrets.PURGE_CACHE_URL }}
+      run: npm run build
+
+    - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git add . && git commit -m "meta: ${{ github.event.head_commit.message }}" || true
+        git push origin meta
