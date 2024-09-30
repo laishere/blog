@@ -10,6 +10,10 @@ For handling Markdown files: `FrontMatter`, `Remark`, `Shiki`, and `Rehype`.
 
 Since the UI is relatively simple, I did not use a UI framework but chose to code all the UI myself.
 
+**Links:**
+- [Website source code](https://github.com/laishere/blog-website)
+- [Blog content repository](https://github.com/laishere/blog)
+
 ## Architecture
 
 <img class="light" style="max-width:60%" src="https://i.ibb.co/wpjG0Ms/arch-light.png" alt="Website Architecture Diagram" />
