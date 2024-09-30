@@ -10,6 +10,10 @@ title: 基于Remix打造一个博客网站
 
 由于UI比较简单，我并没有采用UI框架，而是选择自己编写所有UI。
 
+**链接:**
+- [网站源码](https://github.com/laishere/blog-website)
+- [博客内容](https://github.com/laishere/blog)
+
 ## 架构
 
 <img class="light" style="max-width:60%" src="https://i.ibb.co/wpjG0Ms/arch-light.png" alt="网站架构" />
